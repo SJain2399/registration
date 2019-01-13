@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+{% extends "reg/base.html" %}
+{% load static %}
+
+{% block title %}Home Page{% endblock %}
+
+{% block head %}
+
+<link rel='stylesheet' href='{% static "reg/index.css" %}'>
+
+{% endblock %}
+
+{% block body %}
+
+    
+    <div class='lower'>
+        <div class='jumbotron'>
+                <h1 style="text-align:center">Login here!</h1>
+                <ul class='list'>
+                        <li><a href="{% url 'admin:index' %}"><h3>Admin</h3></a></li>
+                        <li><a href="{% url 'reg:signup' %}"><h3>User</h3></a></li>
+                </ul>
+                <h3>Don't have an account? <a href="{% url 'reg:signup' %}"><h3>Sign up here</h3></a></li></h3>
+        </div>
+    </div>
+
+{% endblock %}
+

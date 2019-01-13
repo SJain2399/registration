@@ -1,0 +1,19 @@
+.upper{
+    background-color: blue;
+    height:27vh;
+    margin-top:0;
+}
+img{
+    width:auto;
+    padding:2%;
+}
+.mp{
+    color:white;
+    text-align: center;
+    font-size:72px;
+    padding-top:7%;
+    padding-left:-39%;
+    }
+    body{
+        margin-bottom:0;
+    }

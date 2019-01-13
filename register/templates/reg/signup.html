@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+{% extends 'reg/base.html' %}
+{% load static %}
+
+{% block title %}Sign up Page{% endblock %}
+
+{% block body %}
+
+    <div class='jumbotron'>
+        {% if registered %}
+        <h1>Thank you for registering.</h1>
+        {% else %}
+        <h3>Please fill the form given below to register.</h3>
+        <form method='POST'>
+            {% csrf_token %}
+            {{ userform.as_p }}
+            {{ userinfoform.as_p }}
+            <input type='submit' name='' value='Register'>
+        </form>
+    {% endif %}
+    </div>
+
+{% endblock %}
