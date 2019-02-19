@@ -12,23 +12,25 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     </head>
     <body>
-       <!-- <nav class='navbar navbar-expand-sm bg-dark navbar-dark'>
+       <nav class='navbar navbar-expand-sm bg-dark navbar-dark'>
         <div class='container'>
             <ul class='nav navbar-nav'>
                 <li class="nav-item"><a class=navbar-brand href="{% url 'index' %}">Home</a></li>
                 <li class="nav-item"><a class='navbar-link' href="{% url 'admin:index' %}">Admin</a></li>
                 <li class="nav-item"><a class='navbar-link' href="{% url 'reg:signup' %}">Register</a></li>
+                {% if user.is_authenticated %}
+                        <li class="nav-item"><a class='navbar-link' href={% url 'user_logout' %}Logout</a><li>
+                        {% else %}
+                        <li class="nav-item"><a class='navbar-link' href={% url 'reg:user_login' %}Login</a><li>
+                        {% endif %}
+                        
             </ul>
         </div>
         </nav>-->
         <div class='upper',style="width:100%">
             <div class="row row-one">
-                <div class="col-md-2 col-sm-2 col-2">
-                    <img class='img-responsive' src='https://media.glassdoor.com/sqll/562067/madhya-pradesh-police-squarelogo-1475065631337.png', alt="police logo"/>
-                </div>
-              
                 <div class="col-md-9 col-sm-9 col-9">
-                    <h1 class='mp'>MADHYA PRADESH POLICE</h1>
+                    <h1 class='mp'>ProAssist</h1>
                 </div>
             </div>
         </div> 
