@@ -4,7 +4,7 @@ from django.conf import settings
 import django.core.validators
 from django.db import migrations, models
 import django.db.models.deletion
-import phone_field.models
+import phonenumber_field.modelfields
 
 
 class Migration(migrations.Migration):
@@ -20,7 +20,7 @@ class Migration(migrations.Migration):
             name='userinfo',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('phone', phone_field.models.PhoneField(blank=True, help_text='Contact phone number', max_length=31, unique=True)),
+                ('phone', phonenumber_field.modelfields.PhoneNumberField(blank=True, help_text='Contact phone number', max_length=31, unique=True)),
                 ('aadharnumber', models.IntegerField(max_length=6, validators=[django.core.validators.MinLengthValidator(6)])),
                 ('user', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],

@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from phone_field import PhoneField
+from phonenumber_field.modelfields import PhoneNumberField
 from django.core.validators import MinLengthValidator
 
 # Create your models here.
@@ -13,7 +13,7 @@ class userinfo(models.Model):
     user=models.OneToOneField(User,on_delete=models.CASCADE,)
     #additional fields
     
-    phone = PhoneField(blank=True, help_text='Contact phone number',unique=True)
+    phone = PhoneNumberField(blank=True, help_text='Contact phone number',unique=True)
     aadharnumber=models.IntegerField()
     address=models.CharField(max_length=200, blank=True, null=True)
     gender=gender = models.CharField(max_length=1, choices=GENDER_CHOICES, default= 'M')
